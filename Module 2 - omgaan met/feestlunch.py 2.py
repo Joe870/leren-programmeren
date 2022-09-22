@@ -10,6 +10,8 @@ omschrijving_kortingsbonnen = "kortingsbonnen"
 aantal_kortingsbonnen = 3
 prijs_kortingsbonnen = -0.50 
 totale_prijs_kortingsbonnen = aantal_kortingsbonnen * prijs_kortingsbonnen 
+totale_prijs = totale_prijs_kortingsbonnen + totale_prijs_stokbroden + totale_prijs_croissantjes 
 print(f"{aantal_croissantjes} {omschrijving_croissantjes} {prijs_croissantjes}")
 print(f"{aantal_stokbroden} {omschrijving_stokbroden} {prijs_stokbroden}")
 print(totale_prijs_croissantjes + totale_prijs_stokbroden + totale_prijs_kortingsbonnen)
+print(f'de feestlunch kost je bij de bakker {totale_prijs} voor de {aantal_croissantjes} croissantjes en de {aantal_stokbroden} stokbroden als de {aantal_kortingsbonnen} kortingsbonnen nog geldig zijn')

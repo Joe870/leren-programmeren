@@ -1,16 +1,26 @@
-omschrijving_croissantjes = "croissantjes"
-aantal_croissantjes = 17
-prijs_croissantjes = 0.39 
+omschrijving_croissantjes = input("omschrijving") 
+aantal_croissantjes = int(input("aantal_croissantjes")) 
+aantal_croissantjes = int(aantal_croissantjes) 
+prijs_croissantjes = input("prijs_croissantjes") 
+prijs_croissantjes = float(prijs_croissantjes)  
 totale_prijs_croissantjes = aantal_croissantjes * prijs_croissantjes
-omschrijving_stokbroden = "stokbroden"
-aantal_stokbroden = 2
-prijs_stokbroden = 2.78
+print(aantal_croissantjes * prijs_croissantjes)
+omschrijving_stokbroden = input("omschrijving:") 
+aantal_stokbroden = input("aantal_stokbroden") 
+aantal_stokbroden = int(aantal_stokbroden)
+prijs_stokbroden = input("prijs_stokbroden") 
+prijs_stokbroden = float(prijs_stokbroden) 
+print(aantal_stokbroden * prijs_stokbroden) 
 totale_prijs_stokbroden = aantal_stokbroden * prijs_stokbroden 
-omschrijving_kortingsbonnen = "kortingsbonnen"
-aantal_kortingsbonnen = 3
-prijs_kortingsbonnen = -0.50 
-totale_prijs_kortingsbonnen = aantal_kortingsbonnen * prijs_kortingsbonnen 
-totale_prijs = totale_prijs_kortingsbonnen + totale_prijs_stokbroden + totale_prijs_croissantjes 
+omschrijving_kortingsbonnen = input("omschrijving") 
+aantal_kortingsbonnen = input("aantal") 
+aantal_kortingsbonnen = int(aantal_kortingsbonnen) 
+prijs_kortingsbonnen = input("prijs_kortingsbonnen")  
+prijs_kortingsbonnen = float(prijs_kortingsbonnen) 
+totale_prijs_kortingsbonnen = aantal_kortingsbonnen * prijs_kortingsbonnen  
+totale_prijs = totale_prijs_kortingsbonnen + totale_prijs_croissantjes + totale_prijs_stokbroden
+print(aantal_kortingsbonnen * prijs_kortingsbonnen) 
+print(totale_prijs_kortingsbonnen + totale_prijs_stokbroden + totale_prijs_croissantjes)  
 print(f"{aantal_croissantjes} {omschrijving_croissantjes} {prijs_croissantjes}")
 print(f"{aantal_stokbroden} {omschrijving_stokbroden} {prijs_stokbroden}")
 print(totale_prijs_croissantjes + totale_prijs_stokbroden + totale_prijs_kortingsbonnen)

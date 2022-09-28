@@ -3,10 +3,11 @@ toegangsprijs = 7.45
 prijs_gameseat = 0.37 
 tijd_gameseat = 5 
 totale_tijd_gameseat = 45
-totale_prijs_gameseat = prijs_gameseat * 9 
+totale_tijd_gameseat_prijs = totale_tijd_gameseat / tijd_gameseat * prijs_gameseat
 totale_toegangsprijs = aantal_personen * toegangsprijs 
-totale_prijs_gameseat = totale_prijs_gameseat * aantal_personen 
-totale_prijs = totale_toegangsprijs + totale_prijs_gameseat 
+totale_prijs_gameseat = totale_tijd_gameseat_prijs * aantal_personen 
+totale_prijs = totale_toegangsprijs + totale_prijs_gameseat
+print(totale_tijd_gameseat_prijs)  
 print(totale_toegangsprijs)
 print(totale_prijs_gameseat)
 print(totale_prijs)

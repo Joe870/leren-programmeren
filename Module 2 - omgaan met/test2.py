@@ -19,8 +19,6 @@ if "age > 12":
 if bool("age <= 12"): 
   print('Je mag naar binnen')
 
-age = 12
-
 if True: # maak de conditie correct!
   print('welkom')
 else:

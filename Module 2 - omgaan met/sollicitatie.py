@@ -1,4 +1,4 @@
-diploma = input('bent uw in het bezit van een mbo-4 diploma?') 
+diploma = input('bent uw in het bezit van het mbo-4 diploma ondernemen?') 
 rijbewijs = input('bent uw in het bezit van een geldig vrachtwagen rijbewijs?')
 hoed = input('bent uw in bezit van een hoge hoed?') 
 geslacht = input('welk geslacht heeft uw?')
@@ -7,7 +7,7 @@ haar = ''
 if geslacht == 'man':
     snor = input('heeft uw een snor breder dan 10cm?') 
 elif geslacht == 'vrouw':
-    haar = input('heeft uw rood krulhaar?') 
+    haar = input('heeft uw rood krulhaar langer dan 20cm?') 
 lengte = int(input('wat is uw lengte in cm?'))
 gewicht = int(input('wat is uw gewicht in kg?'))
 certificaat = input('bent uw in het bezit van het certificaat overleven met gevaarlijk personeel?')

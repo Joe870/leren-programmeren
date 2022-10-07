@@ -5,28 +5,29 @@ if kaas == 'ja':
         duur = input('is de kaas belachelijk duur?')
         if duur == 'ja':
             print('emmentaler')
-        elif duur == 'nee':
-            print('leerdammer') 
-    elif gaten == 'nee':
+        else: print('leerdammer') 
+    else:
         hard = input('is de kaas hard als steen?') 
         if hard == 'ja':
             print('parmigiano reggianno')
-        elif hard == 'nee':
-            print('goudse kaas')
-elif kaas == 'nee': 
+        else: print('goudse kaas')
+else:
     schimmel = input('heeft de kaas blauwe schimmel?')
     if schimmel == 'ja': 
         korst = input('heeft de kaas een korst?')
         if korst == 'ja':
             print('blue de rochbaron')
-        elif korst == 'nee': 
-            print('foume d ambert') 
-    elif schimmel == 'nee': 
+        else: print('foume d ambert') 
+    else:
         korst = input('heeft de kaas een korst?') 
-        if korst == 'ja':
-            print('camembert')
-        elif korst == 'nee':
-            print('mozzarella') 
+        if korst == 'ja': 
+            stank = input('stinkt de kaas')
+            if stank == 'ja':
+                print('camembert') 
+            else: print('brie') 
+         
+        
+        else: print('mozzarella') 
 
 
     

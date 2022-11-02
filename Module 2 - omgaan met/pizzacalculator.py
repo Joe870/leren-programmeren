@@ -1,4 +1,4 @@
-# Joëlle van Breugel opdracht pizza calculator
+
 afmeting_pizza_1 = "afmeting small" 
 print(afmeting_pizza_1)
 prijs_small_1 = 3 

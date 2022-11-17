@@ -3,6 +3,8 @@
 # purpose of program: 
 # function of program:
 # structure of program: 
+change_zin=''
+change_value=''
 
 toPay = int(float(input('Amount to pay: '))* 100) #je vraagt hoeveel iemand moet betalen dan maak je er een float van en dan maak je er een integer getal van
 paid = int(float(input('Paid amount: ')) * 100) #je vraagt hoeveel iemand heeft betaald dan maak je er een float van en dan maak je er een integer getal van
@@ -18,6 +20,9 @@ if change > 0: #als de som groter dan 0 is
       print('return maximal ', nrCoins, ' coins of ', coinValue, ' cents!' ) #nrcoins is de gedeelde som en coinvalue = 50 of 0 
       nrCoinsReturned = int(input('How many coins of ' + str(coinValue) +  ' cents did you return? ')) #je vraagt hoeveel munten van de bepaalde coinvalue je terug hebt gegeven
       change -= nrCoinsReturned * coinValue #nieuw wisselgeld is de input van regel 19 keer coinvalue
+      change_zin += f'{nrCoinsReturned} coins of {coinValue}\n'
+
+
       
 
 # comment on code below: 
@@ -40,7 +45,7 @@ if change > 0: #als de som groter dan 0 is
       coinValue = 1
     else:
       coinValue = 0
-print(f'{nrCoinsReturned} of {coinValue} cents')   
+print(change_zin)   
 if change > 0: #als change groter dan nul is print regel 37 ander print regel 39
   print('Change not returned: ', str(change) + ' cents')
 else:

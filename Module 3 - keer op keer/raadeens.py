@@ -5,8 +5,9 @@ beurt = 0
 
 while ronde <20:
     raadgetal = randint(1,1000)
-    print(raadgetal)
     vraag = input('wil je nog een ronde spelen')
+    if vraag == 'nee':
+        break
     while beurt < 10:
         raadvraag = int(input('welk getal raad je?'))
         if raadvraag < raadgetal:
@@ -17,7 +18,7 @@ while ronde <20:
                 verschil *= -1
             elif verschil < 50:
                 print('Je bent warm')
-            elif verschil < 20:
+            elif verschil < 50 >20:
                 print('Je bent heel warm')
         elif raadvraag > raadgetal:
             print('lager') 
@@ -27,7 +28,7 @@ while ronde <20:
                 verschil *= -1
             elif verschil < 50:
                 print('Je bent warm')
-            elif verschil < 20:
+            elif verschil < 50 >20:
                 print('Je bent heel warm')
         elif raadvraag == raadgetal:
             score += 1 
@@ -36,7 +37,5 @@ while ronde <20:
             break 
         print(f'einde beurt {beurt}')
     print('teveel rondes gespeeld einde beurt')
-if vraag == 'nee':
-    print('einde spel')
-print('teveel rondes gespeeld') 
 print(score)
+print('einde spel')

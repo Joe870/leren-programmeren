@@ -4,5 +4,8 @@ aantal_mms = int(input('hoeveel mms moeten erbij?'))
 mms = {} 
 for mm in range(aantal_mms): 
     kleur = choice(kleuren)
-mms[kleuren] = kleuren
+    if kleur in mms:
+        mms[kleur] += 1
+    else:
+        mms[kleur] = 1 
 print(mms)

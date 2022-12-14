@@ -1,17 +1,21 @@
 from fruitmand import fruitmand
-# kleur = input('choose a color')
-nieuwe_fruitmand = []
 rond = 0
-niet_rond = 0 
+niet_rond = 0
+kleur = input('choose a color')
 for fruit in fruitmand:
-    nieuwe_fruitmand = fruit('name')
-print(nieuwe_fruitmand)
+    if fruit['color'] == kleur:
+        if fruit['round'] == True:
+            rond+=1 
+        else:
+            niet_rond+=1 
+print(rond)
+print(niet_rond)
+verschil_rond = abs(rond - niet_rond)
+if rond > niet_rond:
+    print(f'er zijn {verschil_rond} meer ronde vruchten dan niet ronde vruchten in de kleur {kleur}')
+elif niet_rond > rond:
+    print(f'er zijn {verschil_rond} minder ronde vruchten dan niet ronde vruchten in de kleur {kleur}')
+else:
+    print(f'er zijn {rond} ronde vruchten en {niet_rond} niet ronde vruchten in de kleur {kleur}')
+
     
-# else: print(f'{kleur} zit niet in de fruitmand')
-#1 kleur is yellow
-#2 kleur is green
-#3 kleur is orange
-#4 kleur is yellow 
-#5 kleur is red
-#6 kleur is brown
-#7 kleur is yellow 

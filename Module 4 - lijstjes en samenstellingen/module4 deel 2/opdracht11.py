@@ -1,13 +1,16 @@
 from fruitmand import fruitmand
 rond = 0
 niet_rond = 0
-kleur = input('choose a color')
-for fruit in fruitmand:
-    if fruit['color'] == kleur:
-        if fruit['round'] == True:
-            rond+=1 
-        else:
-            niet_rond+=1 
+kleur = ''
+while kleur not in fruitmand:
+    kleur = input('which color do you choose?')
+    for fruit in fruitmand:
+        if fruit['color'] == kleur:
+            if fruit['round'] == True:
+                rond+=1 
+            else:
+                niet_rond+=1
+
 print(rond)
 print(niet_rond)
 verschil_rond = abs(rond - niet_rond)

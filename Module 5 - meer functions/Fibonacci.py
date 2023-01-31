@@ -2,7 +2,9 @@ def fibonacci_next(fibo_lijst: list) -> list:
     som_toevoeg=int(fibo_lijst[-1]) + int(fibo_lijst[-2])
     fibo_lijst.append(som_toevoeg)
     return fibo_lijst
+
 hoe_vaak = int(input('hoe veel getallen wil je toevoegen'))
+
 def reeks_fibonacci(limit:int) ->list:
     reeks = [0,1]
     for x in range(limit):

@@ -13,11 +13,25 @@ def multipliction(n1, n2):
 def division(n1,n2):
     som_delen = n1 / n2
     return som_delen
+
+
+def inputfloat(bericht : str) -> float:
+    while True:
+        try:
+            number = input(bericht)
+            number = float(number)
+            return number
+        except:
+            print('vul een getal in')
+
 choice =''
 n1 = False
 firstround = True
 while choice != 'stop':
-    choice = input('wat wil je doen? A getallen optellen, B getallen aftrekken, C getallen vermenigvuldigen, D getallen delen, E getal ophogen, F getal verlagen, G getal verdubbelen, H getal halveren, I stop\n')
+    if firstround:
+        choice = input('wat wil je doen? A getallen optellen, B getallen aftrekken, C getallen vermenigvuldigen, D getallen delen, E getal ophogen, F getal verlagen, G getal verdubbelen, H getal halveren, I stop\n')
+    elif not firstround:
+        choice = input(f'wat wil je met {n1} doen? A getal optellen, B getal aftrekken, C getal vermenigvuldigen, D getal delen, E getal ophogen, F getal verlagen, G getal verdubbelen, H getal halveren, I stop\n')
     choice = choice.upper()
     # heeft nog geen waarde
     n2 = False
@@ -28,19 +42,11 @@ while choice != 'stop':
     elif choice in ['G','H']:
         n2 = 2 
     if n1 == False:
-        while True:
-            n1 = input('vul een getal in')
-            if n1.isnumeric():
-                n1 = int(n1)
-                break
-    print(f'{n1} n1')
+        n1 = inputfloat('vul een getal in')
+        print(f'{n1} n1')
     if n2 == False:
-        while True:
-            n2 = input('vul een getal in')
-            if n2.isnumeric():
-                n2 = int(n2)
-                break
-    print(f'{n2} n2')
+        n2 = inputfloat('vul een getal in')
+        print(f'{n2} n2')
     if choice == 'A':
         uitkomst = addition(n1,n2) 
         #optellen 
@@ -74,5 +80,5 @@ while choice != 'stop':
         firstround == False
         print('stop')
     firstround = False
-    print(uitkomst)
+    print(f'uitkomst{uitkomst}')
     n1 = uitkomst

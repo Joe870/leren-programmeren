@@ -1,9 +1,9 @@
 #constants
-JOURNEY_IN_DAYS = 0
+JOURNEY_IN_DAYS = 11
 
 #data
 mainCharacter = {
-    'name' : '',
+    'name' : 'Vulcan',
     'ownsHorse' : True,
     'adventuring' : True,
     'cash' : {
@@ -13,6 +13,8 @@ mainCharacter = {
         'copper' : 5
     }
 }
+cost_food_human_copper_per_day = 4
+cost_food_horse_copper_per_day = 3
 
 friends = []
 

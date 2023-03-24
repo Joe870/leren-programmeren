@@ -13,10 +13,11 @@ mainCharacter = {
         'copper' : 5
     }
 }
-cost_food_human_copper_per_day = 4
-cost_food_horse_copper_per_day = 3
-cost_tent_gold_per_week = 3
-cost_horse_silver_per_day = 5
+COST_FOOD_HUMAN_COPPER_PER_DAY = 4
+COST_FOOD_HORSE_COPPER_PER_DAY = 3
+
+COST_TENT_GOLD_PER_WEEK = 3
+COST_HORSE_SILVER_PER_DAY = 5
 
 friends = [{
     'name' : 'Jorick',
@@ -80,8 +81,110 @@ friends = [{
     }
 }]
 
-adventurerGear = []
+adventurerGear = [{
+    'name' : 'Lantaren',
+    'amount' : 1,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 2,
+        'type' : 'gold'
+    }
+},{
+    'name' : 'Lampenolie',
+    'amount' : 2,
+    'unit' : 'dl',
+    'price' : {
+        'amount' : 13,
+        'type' : 'copper'
+    }
+},{
+    'name' : 'Hengel',
+    'amount' : 1,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 1,
+        'type' : 'gold'
+    }
+},{
+    'name' : 'Schop',
+    'amount' : 1,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 2,
+        'type' : 'gold'
+    }
+},{
+    'name' : 'Tinderbox',
+    'amount' : 3,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 8,
+        'type' : 'copper'
+    }
+},{
+    'name' : 'Rugzak',
+    'amount' : 1,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 13,
+        'type' : 'silver'
+    }
+},{
+    'name' : 'Touw',
+    'amount' : 3,
+    'unit' : 'meter',
+    'price' : {
+        'amount' : 14,
+        'type' : 'silver'
+    }
+},{
+    'name' : 'Fakkel',
+    'amount' : 2,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 12,
+        'type' : 'silver'
+    }
+},{
+    'name' : 'Waterzak',
+    'amount' : 1,
+    'unit' : 'x',
+    'price' : {
+        'amount' : 11,
+        'type' : 'silver'
+    }
+}]
 
-investors = []
+investors = [{
+    'name' : 'Dwindel',
+    'adventuring' : True,
+    'profitReturn' : 9,
+    'cash' : {
+        'platinum' : 4,
+        'gold' : 5,
+        'silver' : 0,
+        'copper' : 0
+    }
+},{
+    'name' : 'Cipher',
+    'adventuring' : False,
+    'profitReturn' : 6,
+    'cash' : {
+        'platinum' : 2,
+        'gold' : 20,
+        'silver' : 0,
+        'copper' : 0
+    }
+},{
+    'name' : 'Maxxy',
+    'adventuring' : True,
+    'profitReturn' : 12,
+    'cash' : {
+        'platinum' : 8,
+        'gold' : 50,
+        'silver' : 100,
+        'copper' : 0
+    }
+}]
 
 treasure = []

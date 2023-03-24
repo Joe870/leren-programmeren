@@ -1,12 +1,6 @@
 import time
 from termcolor import colored
-from data import JOURNEY_IN_DAYS
-from data import mainCharacter
-from data import cost_food_human_copper_per_day
-from data import cost_food_horse_copper_per_day
-from data import friends
-from data import cost_horse_silver_per_day
-from data import cost_tent_gold_per_week
+from data import *
 import math 
 
 ##################### M04.D02.O2 #####################
@@ -29,7 +23,7 @@ def getPersonCashInGold(personCash:dict) -> float:
 ##################### M04.D02.O4 #####################
 
 def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
-    ultimate_food_cost = ((horses * cost_food_horse_copper_per_day) + (cost_food_human_copper_per_day * people)) * JOURNEY_IN_DAYS
+    ultimate_food_cost = ((horses * COST_FOOD_HORSE_COPPER_PER_DAY) + (COST_FOOD_HUMAN_COPPER_PER_DAY * people)) * JOURNEY_IN_DAYS
     print(ultimate_food_cost)
     return round(copper2gold(ultimate_food_cost),2)
 
@@ -62,37 +56,78 @@ def getNumberOfTentsNeeded(people:int) -> int:
     return math.ceil(people / 3)  
 
 def getTotalRentalCost(horses:int, tents:int) -> float:
-    horse_days = getNumberOfHorsesNeeded(len(friends)) * JOURNEY_IN_DAYS
-    horse_prijs = horse_days * cost_horse_silver_per_day
-    tent_days = (JOURNEY_IN_DAYS/7)
-    math.ceil(tent_days)
-    uiteindelijke_tent_days=tent_days * getNumberOfTentsNeeded(len(friends))
-    tent_prijs = uiteindelijke_tent_days * cost_tent_gold_per_week
-    return horse_prijs + tent_prijs
+    horse_prijs = horses * JOURNEY_IN_DAYS * COST_HORSE_SILVER_PER_DAY
+    tent_prijs = tents * COST_TENT_GOLD_PER_WEEK * math.ceil(JOURNEY_IN_DAYS/7)
+    return silver2gold(horse_prijs) + tent_prijs
 
 ##################### M04.D02.O7 #####################
 
 def getItemsAsText(items:list) -> str:
-    pass
+    lijst = []
+    for item in items:
+        lijst_text = f"{item['amount']}{item['unit']} {item['name']}"
+        lijst.append(lijst_text)
+    print(lijst)
+    return ', ' .join(lijst)
 
 def getItemsValueInGold(items:list) -> float:
-    pass
+    hoeveelheid_goud = 0
+    for element in items:
+        if element['price']['type']=='copper':
+            hoeveelheid_goud += copper2gold(element['price']['amount'] * element['amount'])
+        elif element['price']['type']=='silver':
+            hoeveelheid_goud += silver2gold(element['price']['amount'] * element['amount'])
+        elif element['price']['type']=='platinum':
+            hoeveelheid_goud += platinum2gold(element['price']['amount'] * element['amount'])
+        elif element['price']['type'] == 'gold':
+            hoeveelheid_goud += (element['price']['amount'] * element['amount'])
+    print(hoeveelheid_goud)
+    return hoeveelheid_goud
 
 ##################### M04.D02.O8 #####################
 
 def getCashInGoldFromPeople(people:list) -> float:
-    pass
+    new_gold = 0
+    for elements in people:
+        new_gold  += copper2gold(elements['cash']['copper'])
+        new_gold += silver2gold(elements['cash']['silver'])
+        new_gold += platinum2gold(elements['cash']['platinum'])
+        new_gold += elements['cash']['gold']
+        print(new_gold)
+    return round(new_gold, 2)
 
 ##################### M04.D02.O9 #####################
 
 def getInterestingInvestors(investors:list) -> list:
-    pass
+    new_list = []
+    for element in investors:
+        if element['profitReturn'] <= 10:
+            new_list.append(element)
+    return new_list
+
 
 def getAdventuringInvestors(investors:list) -> list:
-    pass
+    investors_list = []
+    for element in getInterestingInvestors(investors):
+        if element['adventuring'] == True:
+            investors_list.append(element)
+    return investors_list
 
 def getTotalInvestorsCosts(investors:list, gear:list) -> float:
-    pass
+    total_cost_investors = 0
+    item_cost = 0
+    good_investors = getAdventuringInvestors(investors)
+    print(good_investors)
+    amount_horses = getNumberOfHorsesNeeded(len(good_investors))
+    amount_tents = getNumberOfTentsNeeded(len(good_investors))
+    total_rent_cost = getTotalRentalCost(amount_horses, amount_tents)
+    food_cost = getJourneyFoodCostsInGold(len(good_investors), amount_horses)
+    for investors in good_investors:
+        item_cost += getItemsValueInGold(gear) 
+    total_cost_investors = food_cost + total_rent_cost + item_cost
+    return total_cost_investors
+
+
 
 ##################### M04.D02.O10 #####################
 

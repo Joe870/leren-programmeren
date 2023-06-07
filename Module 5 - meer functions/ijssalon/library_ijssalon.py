@@ -8,15 +8,32 @@ def aantal_bolletjes_ijs():
     return aantal_bolletjes
 
 def waar_in(aantal_bolletjes):
-    hfob = 'hoorntje'
-    hofb = input(f'wilt u deze {aantal_bolletjes} bolletje(s) in een hoorntje of een bakje?')
-    if aantal_bolletjes >3 and aantal_bolletjes <=8:
+    hofb = ''
+    if aantal_bolletjes >3 and aantal_bolletjes <8:
         hofb = 'bakje'
+    else:
+        hofb = input(f'wilt u deze {aantal_bolletjes} bolletje(s) in een hoorntje of een bakje?')
     return hofb
+
+def aantal_hoorntjes_bakjes(aantal_bolletjes):
+    aantal_bakjes = 0 
+    aantal_hoorntjes = 0 
+    prijs_hoorntjes = 1.25
+    prijs_bakjes = 0.75
+    if aantal_bolletjes >3 and aantal_bolletjes <=8:
+        aantal_bakjes += 1
+    hofb = waar_in(aantal_bolletjes)
+    if hofb == 'hoorntje':
+        aantal_hoorntjes += 1 
+    elif hofb == 'bakje':
+        aantal_bakjes += 1 
+    prijs_hoorntjes = round(prijs_hoorntjes * aantal_hoorntjes,2)
+    prijs_bakjes = round(prijs_bakjes * aantal_bakjes,2)
+    return prijs_hoorntjes, prijs_bakjes
 
 def meer():
     doorgaan = input("wilt u nog meer bestellen")
     if doorgaan == 'nee':
         print('bedankt en tot ziens')
     return doorgaan
-    
+

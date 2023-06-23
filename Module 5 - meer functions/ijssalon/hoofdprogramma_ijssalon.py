@@ -64,41 +64,34 @@ while volgende_bestelling == "ja":
         eind_prijs_aardbei = round(aantal_aardbei * prijs_liter,2)
         eind_prijs_chocola = round(aantal_chocolade * prijs_liter,2)
         eind_prijs_vanille = round(aantal_vanille * prijs_liter,2)
-        eind_prijs_ijs = eind_prijs_aardbei + eind_prijs_chocola + eind_prijs_vanille
+        eind_prijs_ijs = round((aantal_aardbei + aantal_chocolade + aantal_vanille) * prijs_liter,2)
         eind_btw = round(eind_prijs_ijs / 100 * btw,2)
         print(eind_btw)
         eind_prijs_totaal = round(eind_prijs_aardbei + eind_prijs_chocola + eind_prijs_vanille + eind_btw,2)
         volgende_bestelling = 'nee'
 
 if klant == 1:
-    print('-----------["papi gelato"]------------')
-    if aantal_aardbei >= 1:
-        print(f'Bolletjes aardbei      {aantal_aardbei} x ${prijs_bolletjes} = $ {eind_prijs_aardbei}')
-    if aantal_chocolade >= 1:
-        print(f'Bolletjes chocola     {aantal_chocolade} x ${prijs_bolletjes} = $ {eind_prijs_chocola}')
-    if aantal_vanille >= 1:
-        print(f'Bolletjes vanille      {aantal_vanille} x ${prijs_bolletjes} = $ {eind_prijs_vanille}')
-    if aantal_hoorntjes >= 1:
-            print(f'Hoorntjes                 {aantal_hoorntjes} x ${prijs_hoorntjes} = $ {eind_prijs_hoorntjes}')
-    if aantal_bakjes >= 1:
-            print(f'Bakjes         {aantal_bakjes} x ${prijs_bakjes} = $ {eind_prijs_bakjes}')
-    if aantal_topping >= 1:
-            print(f'topping                        = $ {eind_prijs_topping}')
-    print('---------------------------------------')
-    print(f'totaal         = ${eind_prijs_totaal}')
-    print('bedankt en tot ziens')
+    lob = 'Bolletjes'
+    
 elif klant == 2:
-    print('-----------["papi gelato"]------------')
-    if aantal_aardbei >= 1:
-        print(f'liter aardbei      {aantal_aardbei} x ${prijs_liter} = $ {eind_prijs_aardbei}')
-    if aantal_chocolade >= 1:
-        print(f'liter chocola     {aantal_chocolade} x ${prijs_liter} = $ {eind_prijs_chocola}')
-    if aantal_vanille >= 1:
-        print(f'liter vanille      {aantal_vanille} x ${prijs_liter} = $ {eind_prijs_vanille}')
-    print(f'BTW                             = $ {eind_btw}')
-    print('---------------------------------------')
-    print(f'totaal         = ${eind_prijs_totaal}')
-    print('bedankt en tot ziens')
-
+    lob = 'Liter'
+print('-----------["papi gelato"]------------')
+if aantal_aardbei >= 1:
+    print(f'{lob} aardbei      {aantal_aardbei} x ${prijs_bolletjes} = $ {eind_prijs_aardbei}')
+if aantal_chocolade >= 1:
+    print(f'{lob} chocola     {aantal_chocolade} x ${prijs_bolletjes} = $ {eind_prijs_chocola}')
+if aantal_vanille >= 1:
+    print(f'{lob} vanille      {aantal_vanille} x ${prijs_bolletjes} = $ {eind_prijs_vanille}')
+if aantal_hoorntjes >= 1:
+        print(f'Hoorntjes                 {aantal_hoorntjes} x ${prijs_hoorntjes} = $ {eind_prijs_hoorntjes}')
+if aantal_bakjes >= 1:
+        print(f'Bakjes         {aantal_bakjes} x ${prijs_bakjes} = $ {eind_prijs_bakjes}')
+if aantal_topping >= 1:
+        print(f'topping                        = $ {eind_prijs_topping}')
+if klant == 2:
+    print(f'BTW                       = ${eind_btw}')
+print('---------------------------------------')
+print(f'totaal         = ${eind_prijs_totaal}')
+print('bedankt en tot ziens')
      
      
